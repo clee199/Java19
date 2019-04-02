@@ -1,5 +1,3 @@
-package eu.escpeurope.coding;
-
 import java.util.Scanner;
 
 public class Main {
@@ -185,7 +183,9 @@ public class Main {
         // START THE COMMAND LINE INTERFACE (TEXT INTERFACE) BELOW
 
         //start the calculation process
+        System.out.println("============================================================================");
         System.out.println("Welcome to the world of recipes, please select one of the following options:");
+        System.out.println("============================================================================");
 
         //print all the available option
         printUserOptions();
@@ -198,7 +198,13 @@ public class Main {
             System.out.println(r1.getDescription());
             System.out.println(" ");
             System.out.println("Ingredients:");
-            r1.printIngredients();
+            double sum = 0;
+            for (int i = 0; i < list_chcake.length; i++)
+            {
+                sum = sum + list_chcake[i].getKcal();
+                System.out.println(list_chcake[i].getIngredients() + " -- Kcal: " + list_chcake[i].getKcal() + " -- Amount: " + list_chcake[i].getAmount());
+            }
+            System.out.println("Sum of Kcal: " + sum);
         }
 
         if(cl.equals("carrotcake"))
@@ -206,7 +212,13 @@ public class Main {
             System.out.println(r2.getDescription());
             System.out.println(" ");
             System.out.println("Ingredients:");
-            r2.printIngredients();
+            double sum = 0;
+            for (int i = 0; i < list_cacake.length; i++)
+            {
+                sum = sum + list_cacake[i].getKcal();
+                System.out.println(list_cacake[i].getIngredients() + " -- Kcal: " + list_cacake[i].getKcal() + " -- Amount: " + list_cacake[i].getAmount());
+            }
+            System.out.println("Sum of Kcal: " + sum);
         }
 
         if(cl.equals("popeyespinach"))
@@ -214,7 +226,13 @@ public class Main {
             System.out.println(r3.getDescription());
             System.out.println(" ");
             System.out.println("Ingredients:");
-            r3.printIngredients();
+            double sum = 0;
+            for (int i = 0; i < list_spcake.length; i++)
+            {
+                sum = sum + list_spcake[i].getKcal();
+                System.out.println(list_spcake[i].getIngredients() + " -- Kcal: " + list_spcake[i].getKcal() + " -- Amount: " + list_spcake[i].getAmount());
+            }
+            System.out.println("Sum of Kcal: " + sum);
         }
 
         if(cl.equals("cheesycake"))
@@ -222,7 +240,39 @@ public class Main {
             System.out.println(r4.getDescription());
             System.out.println(" ");
             System.out.println("Ingredients:");
-            r4.printIngredients();
+            double sum = 0;
+            for (int i = 0; i < list_checake.length; i++)
+            {
+                sum = sum + list_checake[i].getKcal();
+                System.out.println(list_checake[i].getIngredients() + " -- Kcal: " + list_checake[i].getKcal() + " -- Amount: " + list_checake[i].getAmount());
+            }
+            System.out.println("Sum of Kcal: " + sum);
+        }
+
+        if(cl.equals("calculator"))
+        {
+            System.out.println(r4.getDescription());
+            System.out.println(" ");
+            System.out.println("Ingredients:");
+            double sum = 0;
+            int value = -1;
+            int answer = -1;
+            double gr;
+            while (value != 0)
+            {
+                for (int i = 0; i < cfs.length; i++)
+                {
+                    System.out.println("Food " + i + " " + cfs[i].getName());
+                }
+                System.out.println("Please select a food ?");
+                answer = sc.nextInt();
+                System.out.println("How much gr did you take ?");
+                gr = sc.nextInt();
+                sum = sum + cfs[answer].printKcal(gr);
+                System.out.println("1 for Continue or 0 for Exit");
+                value = sc.nextInt();
+            }
+            System.out.println("Sum of Kcal: " + sum);
         }
 
 
@@ -260,9 +310,15 @@ public class Main {
     {
 
         System.out.println("* 'chocoloco' if you want to bake a luxurious and delicious chocolate cake.");
+
         System.out.println("* 'carrotcake' if you want to bake a healthy carrot cake.");
+
         System.out.println("* 'popeyespinach' to bake a cake that will make the earth shake.");
+
         System.out.println("* 'cheesycake' to bake a cake full of cheese but not cheesy.");
+
+        System.out.println("* 'calculator' Calories Calculator");
+
         System.out.println("* 'end' if you want to finish.");
 
     }
