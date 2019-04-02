@@ -1,5 +1,3 @@
-package eu.escpeurope.coding;
-
 public class Ingredients extends Food {
 
     //product amount
@@ -15,4 +13,7 @@ public class Ingredients extends Food {
         super(name, kcal);
         this.amount = amount;
     }
+    public String getIngredients() { return name; }
+
+    public double getKcal() { return kcal; }
 }
