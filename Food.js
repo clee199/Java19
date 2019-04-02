@@ -1,5 +1,3 @@
-package eu.escpeurope.coding;
-
 public class Food {
 
     //product short name
@@ -41,6 +39,11 @@ public class Food {
     {
         System.out.println("Kcal:" + kcal*gr);
     }
+    public double printKcal(double gr)
+    {
+        return kcal * gr;
+    }
 
 
 }
+
