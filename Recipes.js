@@ -1,5 +1,3 @@
-package eu.escpeurope.coding;
-
 public class Recipes {
     public Recipes(String name, String description, Ingredients[] loi) {
         this.name = name;
@@ -8,8 +6,8 @@ public class Recipes {
     }
     //constructor
     private String name;
-        private String description;
-        private Ingredients[] loi;
+    private String description;
+    private Ingredients[] loi;
 
     //getters and setters
     public String getName() { return name; }
@@ -23,4 +21,9 @@ public class Recipes {
     public Ingredients[] getLoi() { return loi; }
 
     public void setLoi(Ingredients[] loi) { this.loi = loi; }
+
+    public void printIngredients()
+    {
+        System.out.println("Error : " + name);
+    }
 }
